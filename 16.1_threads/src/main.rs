@@ -1,7 +1,7 @@
 use std::thread;
 
 fn main() {
-    thread::spawn(|| {
+    let handle = thread::spawn(|| {
         for i in 1..10 {
             println!("hi number {} from the spawned thread!",i);
         }
@@ -10,4 +10,6 @@ fn main() {
     for i in 1..5 {
         println!("hi number {} from the main thread!",i);
     }
+
+    handle.join();
 }
