@@ -7,9 +7,11 @@ fn main() {
         }
     });
 
+    handle.join();
+
     for i in 1..5 {
         println!("hi number {} from the main thread!",i);
     }
 
-    handle.join();
+    // handle.join();
 }
